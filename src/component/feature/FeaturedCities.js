@@ -2,7 +2,7 @@ import React from "react";
 import CityCard from "../city/CityCard";
 
 const FeaturedCities = (props) => (
-  <div>
+  <div className="container" style={{ marginTop: 30, marginBottom: 30 }}>
     <div className="row">
       <div className="col-12">
         <h3>Featured Cities</h3>

@@ -1,23 +1,24 @@
 import React from "react";
-// import CityCard from "./components/CityCard";
 import Navbar from "./component/navbar/Navbar";
-import ImageandWelcome from "./component/welcome/ImageandWelcome";
-import FeatureCities from "./component/feature/FeatureCities";
+import ImageAndWelcome from "./component/ImageWelcome/ImageAndWelcome";
+import FeaturedCities from "./component/feature/FeaturedCities";
 // import logo from './logo.svg';
 // import './App.css';
 
 function App() {
+  const citiesDummy = [
+    { id: 72, name: "Jakarta", country_name: "Indonesia" },
+    { id: 11052, name: "Bandung", country_name: "Indonesia" },
+    { id: 170, name: "Bali", country_name: "Indonesia" }
+  ];
   return (
-    <div>
+    <>
       <Navbar />
-      <ImageandWelcome />
-      <FeatureCities cities={citiesDummy} />
-      {/* <CityCard /> */}
-      <div
-        className="container"
-        style={{ marginTop: 30, marginBottom: 30 }}
-      ></div>
-    </div>
+      <ImageAndWelcome />
+      <div className="container" style={{ marginTop: 30, marginBottom: 30 }}>
+        <FeaturedCities cities={citiesDummy} />
+      </div>
+    </>
   );
 }
 
