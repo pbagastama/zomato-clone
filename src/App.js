@@ -1,25 +1,20 @@
-import React from "react";
+import React, { Component } from "react";
 import Navbar from "./component/navbar/Navbar";
-import ImageAndWelcome from "./component/ImageWelcome/ImageAndWelcome";
-import FeaturedCities from "./component/feature/FeaturedCities";
+import Home from "./pages/Home";
+import Footer from "./component/footer/Footer";
 // import logo from './logo.svg';
 // import './App.css';
 
-function App() {
-  const citiesDummy = [
-    { id: 72, name: "Jakarta", country_name: "Indonesia" },
-    { id: 11052, name: "Bandung", country_name: "Indonesia" },
-    { id: 170, name: "Bali", country_name: "Indonesia" }
-  ];
-  return (
-    <>
-      <Navbar />
-      <ImageAndWelcome />
-      <div className="container" style={{ marginTop: 30, marginBottom: 30 }}>
-        <FeaturedCities cities={citiesDummy} />
-      </div>
-    </>
-  );
+class App extends Component {
+  render() {
+    return (
+      <>
+        <Navbar />
+        <Home />
+        <Footer />
+      </>
+    );
+  }
 }
 
 export default App;

@@ -1,11 +1,11 @@
 import React from "react";
 import CityCard from "../city/CityCard";
 
-const FeaturedCities = (props) => (
+const CityList = (props) => (
   <div className="container" style={{ marginTop: 30, marginBottom: 30 }}>
     <div className="row">
       <div className="col-12">
-        <h3>Featured Cities</h3>
+        <h3>{props.title}</h3>
       </div>
     </div>
     <div className="row">
@@ -16,4 +16,4 @@ const FeaturedCities = (props) => (
   </div>
 );
 
-export default FeaturedCities;
+export default CityList;
