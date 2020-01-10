@@ -4,13 +4,16 @@ import ImageAndWelcome from "../component/ImageWelcome/ImageAndWelcome";
 import CityList from "../component/feature/CityList";
 import SearchCity from "../component/search/SearchCity";
 
+import { API } from "../config/api";
+
 class Home extends Component {
   constructor() {
     super();
     this.state = {
       featuredCities: null,
       citiesResultSearch: null,
-      keyword: ""
+      keyword: "",
+      cityKeywordSearch: ""
     };
   }
 
@@ -19,11 +22,11 @@ class Home extends Component {
   };
 
   getFeaturedCities = () => {
-    var url = "https://developers.zomato.com/api/v2.1/cities";
+    var url = `${API.zomato.baseUrl}/cities`;
     axios
       .get(url, {
         headers: {
-          "user-key": "d053bf1f3ee22dc8bfb54a3a76228361"
+          "user-key": API.zomato.api_key
         },
         params: {
           city_ids: "74,11052,170"
@@ -43,11 +46,11 @@ class Home extends Component {
 
   searchHandler = () => {
     let keyword = this.state.keyword;
-    var url = `https://developers.zomato.com/api/v2.1/cities`;
+    var url = `${API.zomato.baseUrl}/cities`;
     axios
       .get(url, {
         headers: {
-          "user-key": "d053bf1f3ee22dc8bfb54a3a76228361"
+          "user-key": API.zomato.api_key
         },
         params: {
           q: keyword
